@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useEffect, useState } from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [results, setResults] = useState([]);
+  const [cursor, setCursor] = useState("");
+  const url = "https://bad-api-assignment.reaktor.com/rps/history";
+
+  useEffect(() => {
+    fetch(url + cursor)
+      .then((response) => {
+        if (response.ok) {
+          console.log(response);
+        }
+      })
+      .then((response) => {
+        console.log(response);
+      });
+
+    console.log(results);
+  }, [cursor]);
+
+  return <div className="App">Hi</div>;
 }
 
 export default App;
