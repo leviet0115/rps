@@ -1,38 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
+
 .App {
-  text-align: center;
+  position: relative;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*navbar*/
+
+.navbar {
+  background-color: rgba(148, 187, 233, 1);
+  height: 10vh;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo {
+  width: 15vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.homeButton {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+/*liveboard*/
+
+.liveboard {
+  background-color: black;
+  width: 100%;
+  min-height: 90vh;
+  margin-top: 10vh;
+  padding-top: 1rem;
+}
+
+.loading {
+  color: rgba(238, 174, 202, 1);
+  margin-top: 10vh;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  row-gap: 3vh;
 }
 
-.App-link {
-  color: #61dafb;
+.liveboard h1 {
+  color: rgba(238, 174, 202, 1);
+  width: fit-content;
+  text-align: center;
+  margin: 1rem auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.game {
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+  width: 550px;
+  height: 2rem;
+  margin: 0.5rem auto;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  font: 0.8rem;
+}
+
+.links {
+  text-decoration: none;
+  color: black;
+}
+
+.player1 {
+  text-align: left;
+  width: 250px;
+}
+
+.detail {
+  text-align: center;
+}
+
+.player2 {
+  text-align: right;
+  width: 250px;
+}
+
+/*player*/
+.player {
+  background: #e1e2e1;
+  width: 100%;
+  min-height: 90vh;
+  margin-top: 10vh;
+  padding: 1rem 0;
+}
+
+.infoBox {
+  background: #f5f5f5;
+  width: 80vw;
+  margin: auto;
+  margin-top: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 10px 6px -6px #777;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  row-gap: 0;
+
+  text-align: left;
+}
+
+.info {
+  height: 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 45%;
+}
+
+.info strong {
+  width: 20vw;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    padding-top: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    text-align: center;
+    font-size: 0.8rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .liveboard h1 {
+    margin-top: 2rem;
+  }
+
+  .infoBox {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .info {
+    width: 80%;
+  }
+
+  .info strong {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .App {
+    font-size: 0.8rem;
+  }
+
+  .game {
+    width: 95vw;
+  }
+
+  .player1 {
+    width: 40vw;
+  }
+
+  .player2 {
+    width: 40vw;
+  }
+
+  .infoButton {
+    display: none;
   }
 }

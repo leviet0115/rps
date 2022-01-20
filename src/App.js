@@ -1,26 +1,27 @@
 import "./App.css";
-import { useEffect, useState } from "react";
+import NavBar from "./Component/NavBar";
+import Liveboard from "./Component/Liveboard";
+import { HistoryProvider } from "./Context/HistoryContext";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Player from "./Component/Player";
+import { LiveProdvider } from "./Context/LiveContext";
 
 function App() {
-  const [results, setResults] = useState([]);
-  const [cursor, setCursor] = useState("");
-  const url = "https://bad-api-assignment.reaktor.com/rps/history";
-
-  useEffect(() => {
-    fetch(url + cursor)
-      .then((response) => {
-        if (response.ok) {
-          console.log(response);
-        }
-      })
-      .then((response) => {
-        console.log(response);
-      });
-
-    console.log(results);
-  }, [cursor]);
-
-  return <div className="App">Hi</div>;
+  return (
+    <Router>
+      <HistoryProvider>
+        <LiveProdvider>
+          <div className="App">
+            <NavBar />
+            <Routes>
+              <Route exact path="/" element={<Liveboard />}></Route>
+              <Route path="/player/:name" element={<Player />}></Route>
+            </Routes>
+          </div>
+        </LiveProdvider>
+      </HistoryProvider>
+    </Router>
+  );
 }
 
 export default App;
