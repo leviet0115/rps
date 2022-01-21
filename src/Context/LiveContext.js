@@ -13,7 +13,7 @@ export const LiveProdvider = (props) => {
   }, []);
 
   useEffect(() => {
-    let socket = new WebSocket(proxy + socketUrl);
+    let socket = new WebSocket(socketUrl);
 
     socket.onmessage = (message) => {
       if (message !== undefined) {
