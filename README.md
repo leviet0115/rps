@@ -1,4 +1,4 @@
-## Rps - a web application for displaying Rock Paper Sciccors result
+## Rps - a web application for displaying Rock Paper Sciccors game results from pre-built API, on which I have no control 
 
 Live: https://lv-rps.web.app/
 
