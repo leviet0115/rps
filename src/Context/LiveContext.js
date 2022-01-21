@@ -4,7 +4,7 @@ export const LiveContext = createContext();
 
 export const LiveProdvider = (props) => {
   const [liveGames, setLive] = useState([]);
-  const socketUrl = "ws://bad-api-assignment.reaktor.com/rps/live";
+  const socketUrl = "wss://bad-api-assignment.reaktor.com/rps/live";
 
   const replace = useCallback((array, object) => {
     let newArray = array.filter((element) => element.gameId !== object.gameId);
@@ -13,7 +13,7 @@ export const LiveProdvider = (props) => {
   }, []);
 
   useEffect(() => {
-    let socket = new WebSocket(socketUrl);
+    let socket = new WebSocket(proxy + socketUrl);
 
     socket.onmessage = (message) => {
       if (message !== undefined) {
