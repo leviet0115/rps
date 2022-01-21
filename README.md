@@ -1,5 +1,7 @@
 ## Rps - a web application for displaying Rock Paper Sciccors result
 
+Live: https://lv-rps.web.app/
+
 ### 1. My goals
 
 I want to build a web application with:
@@ -24,6 +26,7 @@ I want to build a web application with:
 - Is not re-fetched when the user switch between pages
 - Is globally accessible.
 
+**The web application layout is set to be responsive to laptop and ipad but not phone screen**
 ### 2. My principles
 
 - Use the technology that I really understand what it’s doing
