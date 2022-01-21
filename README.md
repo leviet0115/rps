@@ -7,13 +7,13 @@
   **A cute live board that**
   - Shows ten most recent game. 
   - If the game is on-going, the game detail shows `?` as played hand
-  - If the result of the existed game is available, update the game detail and put it on top of the list 
+  - If the result of the existed game is available, updates the game detail and puts it on top of the list 
   - Clicking on the player name or its info button redirects the user to that player’s info page
 
-  **A info page for each player that**
-  -	Display the calculated index: most played hand, number of games played, win rate
-  -	Display a table of the details of the games played. Expected columns: game id, player 1, hands, player 2
-  - Clicking on the player name in the table will lead to that player’s info page
+  **An info page for each player that**
+  -	Displays the calculated index: most played hand, number of games played, win rate
+  -	Displays a table of the details of the games played. Expected columns: game id, player 1, hands, player 2
+  - Clicking on the player name or its info button redirects the user to that player’s info pag
   -	A floating home button
 
   **Data that**
