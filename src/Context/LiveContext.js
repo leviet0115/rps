@@ -13,7 +13,7 @@ export const LiveProdvider = (props) => {
   }, []);
 
   useEffect(() => {
-    const socket = new WebSocket(socketUrl);
+    let socket = new WebSocket(socketUrl);
 
     socket.onmessage = (message) => {
       if (message !== undefined) {
@@ -29,7 +29,10 @@ export const LiveProdvider = (props) => {
     socket.onerror = (error) => {
       console.log(error);
       socket.close();
-      socket.OPEN();
+    };
+
+    socket.onclose = () => {
+      socket = new WebSocket(socketUrl);
     };
   }, [replace]);
 

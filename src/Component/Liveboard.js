@@ -20,11 +20,14 @@ const Liveboard = () => {
     return (
       <div className="liveboard">
         <h1>Most recent on-going games</h1>
-        {liveGames.slice(-10).map((game) => (
-          <div>
-            <Game game={game} key={game.gameId + game.type} />
-          </div>
-        ))}
+        {liveGames
+          .slice(-10)
+          .reverse()
+          .map((game) => (
+            <div>
+              <Game game={game} key={game.gameId + Date.now()} />
+            </div>
+          ))}
       </div>
     );
   }
