@@ -52,6 +52,10 @@ The challenge is: we have to wait for a huge amount of API fetches before we can
 - It will not restart the fetching process when the user switches between pages.
 - It will allow global access to the data.
 
+**3.4 Deployment issue** 
+
+At the beginning, I deployed this web application with Heroku. Despite the successful deploy, it could not serve my application because the proxy I used to solve the CORS error is hosted on Heroku too and Heroku refused to do the routing. Thus, I switched my host service to Firebase and the app was live. 
+
 ### 4. What can be improved:
 
 - Fix some error from the Material Table library
